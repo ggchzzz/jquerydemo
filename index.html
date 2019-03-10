@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <p>显示隐藏</p>
+    <button id="hiden">隐藏</button>
+    <button id="show">显示</button>
+</body>
+<script>
+    $(document).ready(function () {
+        $("#hiden").click(function () {  
+            $("p").hide(1000);
+        });
+        $("#show").click(function () {  
+            $("P").show(1000);
+        });
+      })
+</script>
+</html>

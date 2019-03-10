@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    .item_list{
+        width: 45%;
+       
+    }
+    .item_image{
+        width: 45%;
+        height: 50px;
+    }
+    .item_title{
+    width: 45%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    }
+    #oul{
+        list-style-type: none;
+        display:flex;
+        flex-direction:row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <button>显示/隐藏</button>
+    <p>这是一个文本段楼</p>
+    <p>这是另一个段落</p>
+    <ul id="oul">
+        
+    </ul>
+</body>
+<script>
+    
+    $(function () {  
+        $(document).ready(function (){
+        $("button").click(function(){
+            $("p").toggle();
+        });
+    });
+    $.ajax({
+        type: "get",
+        url: "https://h5.watsons.com.cn/item/ws/group_list?current_page=1&page_size=24&group_id=14350&device_id=86deca30-3052-11e9-9b0b-dbbec14c1b76",
+        data: "data",
+        dataType: "json",
+        success: function (response) {
+                var temp=response.data.item_list;
+                console.log(response.data.item_list);
+                $.each(temp, function (index, item) { 
+                    $("#oul").append(`<li class="item_list"><img  class="item_image" src=${item.over_image_url}  /><div class="item_title"   >${item.item_name}</div></li>`)
+                });
+        }
+    });
+
+
+
+    })
+</script>
+</html>

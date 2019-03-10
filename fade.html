@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    #id1{
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        display: none;
+    }
+    #id2{
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+        display: none;
+    }
+    #id3{
+        width: 50px;
+        height: 50px;
+        background-color: green;
+        display: none;
+    }
+</style>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button >点击淡入淡出效果</button>
+    <br><br>
+    <div id="id1"></div>
+    <div id="id2"></div>
+    <div id="id3"></div>
+</body>
+<script>
+$(document).ready(function () {  
+    $("button").click(function () {  
+        $("#id1").fadeIn();
+        $("#id2").fadeIn('slow');
+        $("#id3").fadeIn('3000');
+    })
+})
+</script>
+</html>
